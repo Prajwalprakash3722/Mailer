@@ -18,16 +18,21 @@ function ReadAttachments() {
   return attachments;
 }
 
-const title = "Deadline for “Build your own portfolio website” Extended";
-
-async function SendMail(data) {
+async function SendMail(data, EmailData) {
   // send mail with defined transport object
   return transporter.sendMail({
     from: process.env.EMAIL, // sender address
     to: data.email, // list of receivers
     subject: title, // Subject line
     text: title, // plain text body
-    html: Template(data.name, title), // html body
+    html: Template(
+      data.name,
+      EmailData.title,
+      EmailData.content,
+      EmailData.button_link,
+      EmailData.button_text,
+      EmailData.footer_text
+    ), // html body
     attachments: ReadAttachments(),
   });
 }

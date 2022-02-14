@@ -20,6 +20,14 @@ function delay(del = 1800, variation = 0) {
 
 const howManyAtATime = 5;
 
+const EmailData = {
+  title: "Deadline for “Build your own portfolio website” Extended",
+  content: `Hello world\nHow are you boi\n\nMai Boi`,
+  button_link: "www.google.com",
+  button_text: "Google",
+  footer_text: "Automated mail",
+};
+
 var start = new Date();
 fs.createReadStream(`data/${process.env.FILE || "dummy.csv"}`)
   .pipe(csv())
@@ -52,7 +60,7 @@ fs.createReadStream(`data/${process.env.FILE || "dummy.csv"}`)
         )
       );
       const res = await Promise.all([
-        sendEmail(data),
+        sendEmail(data, EmailData),
         delay(5000 * +(i === howManyAtATime - 1)),
       ]);
       i++;

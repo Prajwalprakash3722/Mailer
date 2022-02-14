@@ -1,4 +1,11 @@
-const Template = (name, title) => {
+const Template = (
+  name,
+  title,
+  content,
+  button_link,
+  button_text,
+  footer_text
+) => {
   return `<!doctype html>
 <html>
   <head>
@@ -137,12 +144,8 @@ const Template = (name, title) => {
                         margin-bottom: 15px">
                         Greetings from IEEE RVCE!<br/>
                         <br/>
-                        We heard you and We are glad to inform you that the deadline for the submission of the website has been extended until 21st Midnight,
-                        ie; 21st Feb 2022.
                         <br/>
-                        <br/>
-                        Click the button below to submit your website.
-                        </p>
+                        ${content}
                       <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"
                         style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;"
                         width="100%">
@@ -158,8 +161,8 @@ const Template = (name, title) => {
                                     <td
                                       style="font-family: sans-serif; font-size: 14px; vertical-align: top; border-radius: 5px; text-align: center; background-color: #3498db;"
                                       valign="top" align="center" bgcolor="#3498db"> <a
-                                        href="https://docs.google.com/forms/d/e/1FAIpQLSdaOOE-Aok2JDVzbhJE-fq_tkc-JeF2Dttlamq-6cr2Z-65dg/viewform" target="_blank"
-                                        style="border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 12px; font-weight: bold; margin: 0; padding: 12px 25px; text-decoration: none; text-transform: capitalize; background-color: #3498db; border-color: #3498db; color: #ffffff;">Website Submission</a> </td>
+                                        href=${button_link} target="_blank"
+                                        style="border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 12px; font-weight: bold; margin: 0; padding: 12px 25px; text-decoration: none; text-transform: capitalize; background-color: #3498db; border-color: #3498db; color: #ffffff;">${button_text}</a> </td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -181,7 +184,7 @@ const Template = (name, title) => {
                 <td class="content-block"
                   style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; color: #999999; font-size: 12px; text-align: center;"
                   valign="top" align="center">
-                  Looking forward to see your website...
+                 ${footer_text}
                 </td>
               </tr>
             </table>
