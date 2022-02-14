@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.0.0",
+    "nodemailer": "^6.7.2"
+  },
+  "scripts": {
+    "run": "EMAIL=email PASS='pwd' node dataMail.js"
+  },
+  "type": "module"
+}
